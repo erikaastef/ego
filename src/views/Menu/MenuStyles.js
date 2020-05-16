@@ -30,10 +30,16 @@ margin: 0 1vw 0 1vw;
     width:8vw;
 }
 `
-export const Button = styled.div`
+export const Button = styled.button`
+all: unset;
 display:inline-block;
-height:100%;
-padding:3.1vw;
+height: 9.7vh;
+padding-right:3.1vw;
+padding-left:3.1vw;
+:hover{
+color:#eb0a1e;
+border-bottom: solid 0.5vh #eb0a1e
+}
 @media (max-width: 768px) {
     display:none
 }

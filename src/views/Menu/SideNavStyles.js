@@ -5,7 +5,7 @@ display:flex;
 flex-direction:column;
 align-items:flex-end;
 justify-content:space-evenly;
-background:#ffffff;
+background-color:#ffffff;
 height:100%;
 width:30.4vw;
 position:fixed;
@@ -21,9 +21,8 @@ position:static;
 export const List = styled.ul`
 list-style: none;
 width:100%;
-
 text-align:right;
-background: ${props => props.theme.main}
+background-color: ${props => props.theme.main}
 `
 export const CloseButton = styled.div`
 display:flex;
