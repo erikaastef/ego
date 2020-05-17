@@ -2,37 +2,25 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchModelDetails } from "../../store/actions";
+import { CircularProgress } from "@material-ui/core";
+import Carousel  from "./Carousel";
 
 import {
   Box,
-  Card,
-  CardContent,
-  CardPhoto,
-  CardTitle,
-  Carousel,
+  CircularProgressContainer,
   Container,
   Photo,
   Info,
   InfoTitle,
   InfoContent,
   Emphasis,
-} from "./styles";
+} from "./DataStyles";
+
 const DataSheet = () => {
   let { id } = useParams();
 
   const dispatch = useDispatch();
 
-  const featuresPhotos = [
-    require("./img/airbags.png"),
-    require("./img/isofix.png"),
-    require("./img/asientosCuero.png"),
-    require("./img/cajaAutomatica.png"),
-    require("./img/cajaManual.png"),
-    require("./img/camaraTrasera.png"),
-    require("./img/climatizador.png"),
-    require("./img/controlVelocidad.png"),
-    require("./img/displayDigital.png"),
-  ];
   const details = useSelector((state) => state.modelDetails);
 
   useEffect(() => {
@@ -45,14 +33,18 @@ const DataSheet = () => {
       {details ? (
         <Container>
           <Box>
-            <Photo src={require(`../assets/${details.name}.png`)} />
+            {details.name === "Hilux GR-Sport" ? (
+              <Photo src={require(`../assets/Hilux2.png`)} />
+            ) : (
+              <Photo src={require(`../assets/${details.name}.png`)} />
+            )}
             <Info>
               <InfoTitle>{details.name}</InfoTitle>
               <Emphasis>{details.title}</Emphasis>
               <InfoContent>{details.description}</InfoContent>
             </Info>
           </Box>
-          <Carousel>
+          {/* <Carousel>
             {details.model_features
               ? details.model_features.map((feature, index) => (
                   <Card key={index}>
@@ -62,7 +54,9 @@ const DataSheet = () => {
                   </Card>
                 ))
               : ""}
-          </Carousel>
+          </Carousel> */}
+          <Carousel features={details.model_features} />
+
           {details.model_highlights
             ? details.model_highlights.map((highlight, index) =>
                 index === 0 ? (
@@ -71,11 +65,20 @@ const DataSheet = () => {
                       <InfoTitle>{highlight.title}</InfoTitle>
                       <InfoContent>{highlight.content}</InfoContent>
                     </Info>
-                    <Photo src={require(`../assets/${details.name}.png`)} />
+                    {details.name === "Hilux GR-Sport" ? (
+                      <Photo src={require(`../assets/Hilux2.png`)} />
+                    ) : (
+                      <Photo src={require(`../assets/${details.name}.png`)} />
+                    )}
                   </Box>
                 ) : (
                   <Box key={index}>
-                    <Photo src={require(`../assets/${details.name}.png`)} />
+                    {" "}
+                    {details.name === "Hilux GR-Sport" ? (
+                      <Photo src={require(`../assets/Hilux2.png`)} />
+                    ) : (
+                      <Photo src={require(`../assets/${details.name}.png`)} />
+                    )}
                     <Info>
                       <InfoTitle>{highlight.title}</InfoTitle>
                       <InfoContent>{highlight.content}</InfoContent>
@@ -86,7 +89,9 @@ const DataSheet = () => {
             : ""}
         </Container>
       ) : (
-        ""
+        <CircularProgressContainer>
+          <CircularProgress size={50} style={{ color: "#eb0a1e" }} />
+        </CircularProgressContainer>
       )}
     </>
   );

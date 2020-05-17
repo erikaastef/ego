@@ -47,11 +47,12 @@ const Home = () => {
           ? models.map((model) => (
               <Card
                 key={model.id}
-                onMouseOver={(e) => {
+                onTouchStart={() => history.push(`/${model.id}`)}
+                onMouseOver={() => {
                   setCurrentId(model.id);
                   currentId === model.id && setCardHover(true);
                 }}
-                onMouseLeave={(e) => setCardHover(!cardHover)}
+                onMouseLeave={() => setCardHover(!cardHover)}
               >
                 {cardHover && currentId === model.id ? (
                   <Name hover>{model.name}</Name>
