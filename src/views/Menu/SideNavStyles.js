@@ -12,13 +12,14 @@ position:fixed;
 top:0;
 right:0;
 @media (max-width: 768px) {
-position:static;
+    position:static;
     top:9.7vh;
     width:100%;
 }
 `
 
 export const List = styled.ul`
+all:unset;
 list-style: none;
 width:100%;
 text-align:right;
@@ -40,9 +41,8 @@ height:1.7vh;
 width:0.9vw;
 margin-left:0.9vw;
 @media (max-width: 768px) {
-   width:3vw;
-
-margin-left:2vw;
+    width:3vw;
+    margin-left:2vw;
 }
 `
 export const Divider = styled.div`
@@ -51,8 +51,8 @@ width:25vw;
 background:#efeeef;
 margin: 0 auto;
 @media (max-width: 768px) {
-  height: 0.15vh;
-  width:78vw;
+    height: 0.15vh;
+    width:78vw;
 
  }
 `

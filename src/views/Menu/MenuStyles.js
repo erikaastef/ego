@@ -36,7 +36,7 @@ display:inline-block;
 height: 9.7vh;
 padding-right:3.1vw;
 padding-left:3.1vw;
-:hover{
+:focus{
 color:#eb0a1e;
 border-bottom: solid 0.5vh #eb0a1e
 }

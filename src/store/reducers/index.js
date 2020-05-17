@@ -9,7 +9,7 @@ export default (state = initialState, { type, payload }) => {
         case "MODELS_DATA":
             return { ...state, models: payload }
         case "MODEL_DETAILS":
-            return { ...state, models: payload }
+            return { ...state, modelDetails: payload }
         default:
             return state
     }

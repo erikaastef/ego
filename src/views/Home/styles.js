@@ -70,6 +70,7 @@ display:flex;
 export const Name = styled.span`
 font-size: 3.8vh;
 font-weight: 600;
+color:  ${props => props.hover ? "#eb0a1e" : "#000000"}
 `
 export const Year = styled.span`
 padding-right:0.7vw;
@@ -85,5 +86,15 @@ object-fit: contain;
 @media (max-width: 768px) {
     height:22vh;
   width:75vw
+}
+`
+export const Button = styled.button`
+all: unset;
+margin:2.4vh;
+padding: 1.1vh 1.4vw;
+border-radius: 1.4vw;
+background-color:  #191919;
+color:#ffffff;
+visibility: ${props => props.hover ? "visible" : "hidden"}
 }
 `

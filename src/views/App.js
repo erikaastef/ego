@@ -7,12 +7,11 @@ import Home from "./Home/Home"
 import DataSheet from "./DataSheet/DataSheet"
 import Menu from "./Menu/Menu"
 
-const Footer = styled.div`
-position: absolute;
-left: 0px;
-bottom: 0px;
+const Footer = styled.footer`
+display:block;
 background: #000000;
 height: 6.9vh;
+width:100%;
 
 
 `
