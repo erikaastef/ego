@@ -10,15 +10,15 @@
     {
       "src": "logo@2x.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "76×78"
     },
     {
       "src": "logo@3x.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "114×117"
     }
   ],
-  "start_url": ".",
+  "start_url": "./",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
