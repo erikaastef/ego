@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { fetchModelDetails } from "../../store/actions";
+import { fetchModelDetails, currentView } from "../../store/actions";
 import { CircularProgress } from "@material-ui/core";
-import Carousel  from "./Carousel";
+import Carousel from "./Carousel";
 
 import {
   Box,
@@ -20,6 +20,9 @@ const DataSheet = () => {
   let { id } = useParams();
 
   const dispatch = useDispatch();
+
+  dispatch(currentView("home", false));
+  dispatch(currentView("details", true));
 
   const details = useSelector((state) => state.modelDetails);
 
@@ -44,23 +47,13 @@ const DataSheet = () => {
               <InfoContent>{details.description}</InfoContent>
             </Info>
           </Box>
-          {/* <Carousel>
-            {details.model_features
-              ? details.model_features.map((feature, index) => (
-                  <Card key={index}>
-                    <CardPhoto src={featuresPhotos[index]} />
-                    <CardTitle>{feature.name}</CardTitle>
-                    <CardContent>{feature.description}</CardContent>
-                  </Card>
-                ))
-              : ""}
-          </Carousel> */}
+
           <Carousel features={details.model_features} />
 
           {details.model_highlights
             ? details.model_highlights.map((highlight, index) =>
                 index === 0 ? (
-                  <Box key={index}>
+                  <Box reverse key={index}>
                     <Info>
                       <InfoTitle>{highlight.title}</InfoTitle>
                       <InfoContent>{highlight.content}</InfoContent>
@@ -72,7 +65,7 @@ const DataSheet = () => {
                     )}
                   </Box>
                 ) : (
-                  <Box key={index}>
+                  <Box  key={index}>
                     {" "}
                     {details.name === "Hilux GR-Sport" ? (
                       <Photo src={require(`../assets/Hilux2.png`)} />

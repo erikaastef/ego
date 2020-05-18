@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 export const Container = styled.div`
 display:flex;
@@ -7,6 +7,7 @@ justify-content: space-between;
 height: 9.7vh;
 border-bottom: 0.1vh solid #cccccc;
 `
+
 export const Logo = styled.img.attrs({
     src: require("./img/logo.png")
 })`
@@ -36,13 +37,11 @@ display:inline-block;
 height: 9.7vh;
 padding-right:3.1vw;
 padding-left:3.1vw;
-:focus{
-color:#eb0a1e;
-border-bottom: solid 0.5vh #eb0a1e
-}
 @media (max-width: 768px) {
     display:none
 }
+${props => props.emphasis ? css`color:#eb0a1e; border-bottom: solid 0.5vh #eb0a1e` : ""}
+
 `
 
 export const Box = styled.div`

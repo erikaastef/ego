@@ -12,7 +12,7 @@ position:fixed;
 top:0;
 right:0;
 @media (max-width: 768px) {
-    position:static;
+    position:absolute;
     top:9.7vh;
     width:100%;
 }
