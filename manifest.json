@@ -6,16 +6,6 @@
       "src": "logo.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
-    },
-    {
-      "src": "logo@2x.png",
-      "type": "image/png",
-      "sizes": "76×78"
-    },
-    {
-      "src": "logo@3x.png",
-      "type": "image/png",
-      "sizes": "114×117"
     }
   ],
   "start_url": "./",
