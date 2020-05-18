@@ -50,6 +50,8 @@ padding: 1.1vh 1.4vw;
 @media (max-width: 768px) {
     display:none
 }
+${props => props.state === "Todos" && css` border-radius: 1.4vw;
+background-color: #f7f7f7;`}
 `
 export const Catalog = styled.div`
 display:flex;
@@ -133,3 +135,4 @@ export const Select = styled.select`
   }
   ${props => props.hidden ? css`display:none` : css`display:inline-block`}
 `;
+

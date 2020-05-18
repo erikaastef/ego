@@ -30,7 +30,7 @@ const DataSheet = () => {
     dispatch(fetchModelDetails(id));
   }, [dispatch, id]);
 
-  console.log(details);
+ 
   return (
     <>
       {details ? (

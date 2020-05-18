@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+
 import {
   fetchModels,
   orderModels,
@@ -27,7 +28,10 @@ import {
   Button,
   Select,
 } from "./styles";
+
+
 const Home = () => {
+
   const dispatch = useDispatch();
 
   dispatch(currentView("home", true));
@@ -41,7 +45,7 @@ const Home = () => {
   const models = useSelector((state) => state.models);
   const orderedModels = useSelector((state) => state.orderedModels);
 
-  // }
+ 
 
   useEffect(() => {
     dispatch(fetchModels());
@@ -72,8 +76,8 @@ const Home = () => {
       <Header>Descubrí todos los modelos </Header>
       <Filter>
         <Box>
-          <span>Filtra por</span>
-          <Option onClick={() => setCategory("Todos")}>Todos</Option>
+          <span>Filtrar por</span>
+          <Option state={category} onClick={() => setCategory("Todos")}>Todos</Option>
           <Option onClick={() => setCategory("Autos")}>Autos</Option>
           <Option onClick={() => setCategory("Pickups y Comerciales")}>
             Pickups y Comerciales
@@ -117,7 +121,7 @@ const Home = () => {
               category === "Todos" ? (
                 <Card
                   key={model.id}
-                  onMouseOver={() => {
+                  onMouseMove={() => {
                     setCurrentId(model.id);
                     currentId === model.id && setCardHover(true);
                   }}
@@ -143,9 +147,7 @@ const Home = () => {
                       Ver modelo
                     </Button>
                   ) : (
-                    <Button >
-                      Ver modelo
-                    </Button>
+                    <Button>Ver modelo</Button>
                   )}
                 </Card>
               ) : (

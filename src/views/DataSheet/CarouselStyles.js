@@ -1,8 +1,6 @@
 import styled, { css } from "styled-components"
 
 
-const width = '23.4vw', height = '23.5vh';
-
 export const Container = styled.div`
 overflow: hidden;
 background:#f7f7f7;
@@ -14,29 +12,37 @@ flex-direction:column;
 width: 17.8vw;
 height:45.8vh;
 @media (max-width: 768px) {
-  width:80vw
+  width:40vw;
+  height:22vh;
 }
 
 `
 export const CardPhoto = styled.img`
 height:22.9vh;
-width:17.8vw; ;
+width:17.8vw; 
 object-fit:contain;
 @media (max-width: 768px) {
-  width:80vw
+  width:auto;
+  height:10vh;
 }
 `
 export const CardTitle = styled.span`
 font-size:1.25rem;
 font-weight:600;
-margin: 2vh 0;
+margin: 0.5vh 0;
+@media (max-width: 768px) {
+  font-size:0.8rem;
+}
 `
 export const CardContent = styled.p`
 font-size:1rem;
+@media (max-width: 768px) {
+  font-size:0.5rem;
+}
 `
 export const Children = styled.div`
 position:relative;
-  height: 45.8vh;
+  height: 50.8vh;
   margin-top:7vh;
 `;
 export const Icon = styled.img`
@@ -56,7 +62,7 @@ align-items:center;
 justify-content:${props => props.derecha ? "flex-start" : "flex-end"};
   text-shadow: 1px 1px 1px #fff;
   z-index: 100;
-  line-height: ${height};
+  line-height: 23.5vh;
   text-align:center;
   position: absolute;
   opacity: 0.9;
@@ -96,4 +102,10 @@ height: 0.6vw;
 opacity: 0.5;
 border-radius: 50%;
 background-color: #c5c5c5;
+`
+export const CardsContainer = styled.div`
+display: flex;
+flex-wrap: wrap;
+justify-content: space-evenly;
+
 `

@@ -12,7 +12,7 @@ export const Logo = styled.img.attrs({
     src: require("./img/logo.png")
 })`
 height:5.2vh;
-width:2.9vw;
+width:3.3vw;
 margin: 0 1vw 0 1vw;
 @media (max-width: 768px) {
     margin: 0 3vw 0 3vw;
